@@ -8,23 +8,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
+import java.util.Optional;
 
-@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 @Controller
-@RequestMapping("airports")
+@RequestMapping("airport")
 public class AirportController {
+
     @Autowired
     private AirportService airportService;
 
-    @GetMapping
+    @GetMapping("/{id}")
     public @ResponseBody
-    List<Airport> getAllAirports() {
-        return airportService.getAllAirports();
+    Optional<Airport> getAirportById(@PathVariable("id") Integer id) {
+        return airportService.getAirportById(id);
     }
 
-    @GetMapping("/{code}")
-    public @ResponseBody Airport getAirportById(@PathVariable("code") Integer code) {
-        return airportService.getAirportById(code);
-    }
 }

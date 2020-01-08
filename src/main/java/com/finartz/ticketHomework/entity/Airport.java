@@ -7,7 +7,7 @@ public class Airport {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
     @Column
     private String name;
@@ -16,13 +16,13 @@ public class Airport {
     private String country;
 
     @Column
-    private  String code;
+    private String code;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

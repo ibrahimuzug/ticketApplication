@@ -2,6 +2,8 @@ package com.finartz.ticketHomework.dao;
 
 import com.finartz.ticketHomework.entity.Ticket;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface TicketDao extends CrudRepository<Ticket, Long> {
+@Repository
+public interface TicketDao extends CrudRepository<Ticket, Integer> {
 }

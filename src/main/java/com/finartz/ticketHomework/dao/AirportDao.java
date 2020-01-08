@@ -2,6 +2,8 @@ package com.finartz.ticketHomework.dao;
 
 import com.finartz.ticketHomework.entity.Airport;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface AirportDao extends CrudRepository<Airport, Long> {
+@Repository
+public interface AirportDao extends CrudRepository<Airport, Integer> {
 }

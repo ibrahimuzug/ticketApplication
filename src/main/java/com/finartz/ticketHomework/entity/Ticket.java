@@ -17,7 +17,7 @@ public class Ticket {
     private Integer flightId;
 
     @Column
-    private LocalDateTime dateTime;
+    private Integer dateTime;
 
     @Column
     private Double price;
@@ -46,11 +46,11 @@ public class Ticket {
         this.flightId = flightId;
     }
 
-    public LocalDateTime getDateTime() {
+    public Integer getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
+    public void setDateTime(Integer dateTime) {
         this.dateTime = dateTime;
     }
 
