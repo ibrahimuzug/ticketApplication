@@ -1,33 +1,10 @@
-package com.finartz.ticketHomework.entity;
+package com.finartz.ticketHomework.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-@Entity
-public class Flight {
-
-    @Id
-    @Column
-    @GeneratedValue()
-    private Integer id;
-
-    @Column
+public class FlightDto {
     private Integer routeId;
-
-    @Column
     private Integer airlineId;
-
-    @Column
     private Integer cuota;
-
-    @Column
     private Double price;
-
-    public Integer getId() {
-        return id;
-    }
 
     public Integer getRouteId() {
         return routeId;

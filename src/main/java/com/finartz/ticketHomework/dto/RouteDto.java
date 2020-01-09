@@ -1,27 +1,9 @@
-package com.finartz.ticketHomework.entity;
+package com.finartz.ticketHomework.dto;
 
-import javax.persistence.*;
-
-@Entity
-public class Route {
-
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-
-    @Column
+public class RouteDto {
     private String code;
-
-    @Column
     private Integer fromAirportId;
-
-    @Column
     private Integer toAirportId;
-
-    public Integer getId() {
-        return id;
-    }
 
     public String getCode() {
         return code;

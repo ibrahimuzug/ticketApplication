@@ -1,24 +1,9 @@
-package com.finartz.ticketHomework.entity;
+package com.finartz.ticketHomework.dto;
 
-import javax.persistence.*;
-
-@Entity
-public class Airline {
-
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-
-    @Column
+public class AirportDto {
     private String name;
-
-    @Column
     private String code;
-
-    public Integer getId(int i) {
-        return id;
-    }
+    private String country;
 
     public String getName() {
         return name;
@@ -34,5 +19,13 @@ public class Airline {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }

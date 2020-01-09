@@ -1,34 +1,14 @@
-package com.finartz.ticketHomework.entity;
+package com.finartz.ticketHomework.dto;
 
-import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
 
-@Entity
-public class Ticket {
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-
-    @Column
+public class TicketDto {
     private Integer ticketNumber;
-
-    @Column
     private Integer flightId;
-
-    @Column
     private Date date;
-
-    @Column
     private Time time;
-
-    @Column
     private Double price;
-
-    public Integer getId() {
-        return id;
-    }
 
     public Integer getTicketNumber() {
         return ticketNumber;
