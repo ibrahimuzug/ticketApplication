@@ -53,7 +53,7 @@ class AirlineServiceTest {
     void createAirline() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
                 .post("/airline/create")
-                .content(asJsonString(new Airline("3", "Pegasus Airlines", "PGS")))
+                .content(asJsonString(new Airline()))//Test data
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isCreated())

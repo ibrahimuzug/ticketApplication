@@ -1,9 +1,6 @@
 package com.finartz.ticketHomework.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Flight {
@@ -20,7 +17,7 @@ public class Flight {
     private Integer airlineId;
 
     @Column
-    private Integer cuota;
+    private Integer quota;
 
     @Column
     private Double price;
@@ -45,12 +42,12 @@ public class Flight {
         this.airlineId = airlineId;
     }
 
-    public Integer getCuota() {
-        return cuota;
+    public Integer getQuota() {
+        return quota;
     }
 
-    public void setCuota(Integer cuota) {
-        this.cuota = cuota;
+    public void setQuota(Integer cuota) {
+        this.quota = cuota;
     }
 
     public Double getPrice() {

@@ -2,7 +2,6 @@ package com.finartz.ticketHomework.controller;
 
 import com.finartz.ticketHomework.dto.RouteDto;
 import com.finartz.ticketHomework.service.RouteService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,8 +11,11 @@ import java.util.Optional;
 @RequestMapping("/route")
 public class RouteController {
 
-    @Autowired
-    private RouteService routeService;
+    private final RouteService routeService;
+
+    public RouteController(RouteService routeService) {
+        this.routeService = routeService;
+    }
 
     @GetMapping("/{id}")
     public @ResponseBody

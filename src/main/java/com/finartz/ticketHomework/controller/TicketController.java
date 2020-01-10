@@ -1,9 +1,7 @@
 package com.finartz.ticketHomework.controller;
 
-import com.finartz.ticketHomework.dto.RouteDto;
 import com.finartz.ticketHomework.dto.TicketDto;
 import com.finartz.ticketHomework.service.TicketService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,8 +11,11 @@ import java.util.Optional;
 @RequestMapping("/ticket")
 public class TicketController {
 
-    @Autowired
-    private TicketService ticketService;
+    private final TicketService ticketService;
+
+    public TicketController(TicketService ticketService) {
+        this.ticketService = ticketService;
+    }
 
     @GetMapping("/{ticketNumber}")
     public @ResponseBody

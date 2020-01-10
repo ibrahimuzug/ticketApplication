@@ -59,7 +59,7 @@ class FlightServiceTest {
     void createAirport() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
                 .post("/flight/create")
-                .content(asJsonString(new Airline("3", "Odense Airport", "ODS")))
+                .content(asJsonString(new Airline()))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isCreated())

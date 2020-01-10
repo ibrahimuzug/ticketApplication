@@ -1,6 +1,8 @@
 package com.finartz.ticketHomework.service.impl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.finartz.ticketHomework.dto.AirlineDto;
+import com.finartz.ticketHomework.entity.Airline;
 import com.finartz.ticketHomework.service.AirlineService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -33,6 +35,14 @@ class AirlineServiceImplTest {
     private MockMvc mockMvc;
     private AirlineDto airlineDto;
 
+    public static String asJsonString(final Object obj) {
+        try {
+            return new ObjectMapper().writeValueAsString(obj);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @Test
     void getAirlineByIdServiceImplTest() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
@@ -44,10 +54,13 @@ class AirlineServiceImplTest {
     }
 
     @Test
-    void createAirlineServiceImplTest() {
-        AirlineDto airlineDto = new AirlineDto();
-        airlineDto.setCode("PGS");
-        airlineDto.setName("Pegasus Airlines");
-        when(airlineServiceImpl.getAirlineById(1)).thenReturn(Optional.of(airlineDto));
+    void createAirlineServiceImplTest() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders
+                .post("/airport/create")
+                .content(asJsonString(new Airline()))
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().isCreated())
+                .andExpect(MockMvcResultMatchers.content().string(""));
     }
 }

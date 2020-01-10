@@ -33,8 +33,8 @@ class TicketControllerTest {
         TicketDto ticketDto = new TicketDto();
         ticketDto.setTicketNumber(123456);
         ticketDto.setFlightId(1);
-        ticketDto.setDate(01.01.1995);
-        ticketDto.setTime(11:25);
+        ticketDto.setDate(01/01/1995);
+        ticketDto.setTime("11:25");
         ticketDto.setPrice(1550.0);
         when(ticketService.getTicketByTicketNumber(1)).thenReturn(Optional.of(ticketDto));
 

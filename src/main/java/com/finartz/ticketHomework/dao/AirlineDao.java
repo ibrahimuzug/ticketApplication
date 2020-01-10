@@ -8,7 +8,7 @@ import java.util.Optional;
 
 @Repository
 public interface AirlineDao extends CrudRepository<Airline, Integer> {
-     Optional<Airline> findById(Integer id);
+    Optional<Airline> findById(Integer id);
 
-     //createAirline(Airline airline1);
+    void createAirline(Airline airline1);
 }

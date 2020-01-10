@@ -57,7 +57,7 @@ class RouteServiceImplTest {
     void createRoute() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
                 .post("/route/create")
-                .content(asJsonString(new Airline("IST-BAT", "1", "5")))
+                .content(asJsonString(new Airline()))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isCreated())

@@ -1,8 +1,6 @@
 package com.finartz.ticketHomework.controller;
 
-import com.finartz.ticketHomework.dto.AirportDto;
 import com.finartz.ticketHomework.dto.FlightDto;
-import com.finartz.ticketHomework.service.AirportService;
 import com.finartz.ticketHomework.service.FlightService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -18,7 +16,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
@@ -37,7 +34,7 @@ class FlightControllerTest {
         flightDto.setRouteId(1);
         flightDto.setAirlineId(1);
         flightDto.setPrice(1500.0);
-        flightDto.setCuota(300);
+        flightDto.setQuota(300);
         when(flightService.getFlightById(1)).thenReturn(Optional.of(flightDto));
 
         mockMvc.perform(MockMvcRequestBuilders

@@ -4,7 +4,6 @@ import com.finartz.ticketHomework.dao.AirportDao;
 import com.finartz.ticketHomework.dto.AirportDto;
 import com.finartz.ticketHomework.entity.Airport;
 import com.finartz.ticketHomework.service.AirportService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -12,8 +11,11 @@ import java.util.Optional;
 @Service
 public class AirportServiceImpl implements AirportService {
 
-    @Autowired
-    private AirportDao airportDao;
+    private final AirportDao airportDao;
+
+    public AirportServiceImpl(AirportDao airportDao) {
+        this.airportDao = airportDao;
+    }
 
     @Override
     public Optional<AirportDto> getAirportById(Integer id) {

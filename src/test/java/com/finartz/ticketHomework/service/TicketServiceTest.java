@@ -58,7 +58,7 @@ class TicketServiceTest {
     void createAirport() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
                 .post("/ticket/create")
-                .content(asJsonString(new Airline("15253565", "1", "12.12.2020", "13:35", "150")))
+                .content(asJsonString(new Airline()))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isCreated())

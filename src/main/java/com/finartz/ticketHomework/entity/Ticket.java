@@ -46,7 +46,7 @@ public class Ticket {
         this.flightId = flightId;
     }
 
-    public Date getDate() {
+    public int getDate() {
         return date;
     }
 

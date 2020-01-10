@@ -4,15 +4,18 @@ import com.finartz.ticketHomework.dao.FlightDao;
 import com.finartz.ticketHomework.dto.FlightDto;
 import com.finartz.ticketHomework.entity.Flight;
 import com.finartz.ticketHomework.service.FlightService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
 public class FlightServiceImpl implements FlightService {
-    @Autowired
-    private FlightDao flightDao;
+
+    private final FlightDao flightDao;
+
+    public FlightServiceImpl(FlightDao flightDao) {
+        this.flightDao = flightDao;
+    }
 
     @Override
     public Optional<FlightDto> getFlightById(Integer id) {
@@ -22,7 +25,7 @@ public class FlightServiceImpl implements FlightService {
             FlightDto flightDto = new FlightDto();
             flightDto.setAirlineId(flight.getAirlineId());
             flightDto.setRouteId(flight.getRouteId());
-            flightDto.setCuota(flight.getCuota());
+            flightDto.setQuota(flight.getQuota());
             flightDto.setPrice(flight.getPrice());
             return Optional.of(flightDto);
         }
@@ -34,7 +37,7 @@ public class FlightServiceImpl implements FlightService {
         Flight flight = new Flight();
         flight.setAirlineId(flightDto.getAirlineId());
         flight.setRouteId(flightDto.getRouteId());
-        flight.setCuota(flightDto.getCuota());
+        flight.setQuota(flightDto.getQuota());
         flight.setPrice(flightDto.getPrice());
         flightDao.save(flight);
     }

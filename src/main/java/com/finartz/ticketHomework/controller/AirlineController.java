@@ -2,7 +2,6 @@ package com.finartz.ticketHomework.controller;
 
 import com.finartz.ticketHomework.dto.AirlineDto;
 import com.finartz.ticketHomework.service.AirlineService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,8 +11,11 @@ import java.util.Optional;
 @RequestMapping("/airline")
 public class AirlineController {
 
-    @Autowired
-    private AirlineService airlineService;
+    private final AirlineService airlineService;
+
+    public AirlineController(AirlineService airlineService) {
+        this.airlineService = airlineService;
+    }
 
     @GetMapping("/{id}")
     public @ResponseBody

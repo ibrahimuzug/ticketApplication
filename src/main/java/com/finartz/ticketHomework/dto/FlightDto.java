@@ -3,7 +3,7 @@ package com.finartz.ticketHomework.dto;
 public class FlightDto {
     private Integer routeId;
     private Integer airlineId;
-    private Integer cuota;
+    private Integer quota;
     private Double price;
 
     public Integer getRouteId() {
@@ -22,12 +22,12 @@ public class FlightDto {
         this.airlineId = airlineId;
     }
 
-    public Integer getCuota() {
-        return cuota;
+    public Integer getQuota() {
+        return quota;
     }
 
-    public void setCuota(Integer cuota) {
-        this.cuota = cuota;
+    public void setQuota(Integer quota) {
+        this.quota = quota;
     }
 
     public Double getPrice() {
